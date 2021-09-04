@@ -53,6 +53,16 @@
   }
 
   .main{
+    height: calc(~"(100% - 50px)");
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #f5f5f5;
+    padding: 10px;
+    :global {
+      .za-pull {
+        overflow: unset;
+      }
+    }
 
   }
 }

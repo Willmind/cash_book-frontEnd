@@ -43,7 +43,11 @@ const Login = () => {
                 }).then(res=>{
                     Toast.show(res.message);
                     // 将 token 写入 localStorage
-                    localStorage.setItem('token', data.token);
+
+                    localStorage.setItem('token', '');
+                    localStorage.setItem('token', res.data.token);
+
+                    console.log(localStorage.getItem('token'));
                 })
             }else{
                 /**

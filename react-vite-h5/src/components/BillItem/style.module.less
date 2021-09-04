@@ -1,12 +1,42 @@
 .item{
 
   .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
     .date{
-
+      font-weight: bold;
+      font-size: 16px;
     }
 
     .money{
+      display: flex;
+      font-size: 14px;
+      >div{
+        margin-left: 10px;
+      }
 
+    }
+  }
+
+  .bill{
+    .itemIcon{
+      color: #007fff;
+    }
+    span{
+      margin-left: 4px;
+    }
+
+  }
+  :global {
+    .za-cell {
+      //&::after {
+      //  left: 0;
+      //}
+      .za-cell__title {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 

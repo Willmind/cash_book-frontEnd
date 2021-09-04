@@ -43,10 +43,10 @@ const BillItem = ({bill}) => {
                 </div>
                 <div className={s.money}>
                     <div>
-                        支¥{ expense.toFixed(2) }
+                        支 ¥{ expense.toFixed(2) }
                     </div>
                     <div>
-                        收¥{ income.toFixed(2) }
+                        收 ¥{ income.toFixed(2) }
                     </div>
                 </div>
             </div>
@@ -54,8 +54,27 @@ const BillItem = ({bill}) => {
             {
                 bill&&bill.bills.map(item=>
                     <Cell onClick={()=>goToDetail(item)}
+                          className={s.bill}
+                          key={item.id}
                           title={
-                              
+                              <>
+                                  <CustomIcon
+                                      className={s.itemIcon}
+                                      type={item.type_id ? typeMap[item.type_id].icon : 1}
+                                  />
+                                  <span>{item.type_name}</span>
+                              </>
+                          }
+                          description={
+                              <span style={{color:item.pay_type===2?'red':'#39be77'}}>
+                                  {item.pay_type===1?'-':'+'}{item.amount}
+                              </span>
+                          }
+                          help={
+                              <div>
+                                  {dayjs(Number(item.date)).format('HH:mm')}
+                                  {item.remark?`|${item.remark}`:''}
+                              </div>
                           }
                     >
 

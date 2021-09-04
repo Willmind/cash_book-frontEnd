@@ -32,6 +32,8 @@ axios.interceptors.response.use(res => {
         Toast.show('服务端异常！')
         return Promise.reject(res)
     }
+    console.log(localStorage.getItem('token'));
+    console.log(res);
     if (res.data.code !== 200) {
         if (res.data.msg) Toast.show(res.data.msg)
 
@@ -39,7 +41,7 @@ axios.interceptors.response.use(res => {
          * 没有登录的用户，默认跳到 /login 页面
          */
         if (res.data.code === 401) {
-            window.location.href = '/login'
+            // window.location.href = '/login'
         }
         return Promise.reject(res.data)
     }

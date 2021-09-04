@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body, html, p {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+.text-deep {
+  color: rgba(0, 0, 0, 0.9)
+}
+
+.text-light {
+  color: rgba(0, 0, 0, 0.6)
+}
