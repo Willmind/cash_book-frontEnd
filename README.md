@@ -6,14 +6,17 @@
 ## 项目启动
 
 ```
-//进入项目文件夹
+# 进入项目文件夹
 cd react-vite-h5
-//安装依赖
+
+# 安装依赖
 npm install
-//项目运行
+
+# 项目运行
 npm run dev
 使用浏览器打开http://localhost:3000/
-//前端项目打包
+
+# 前端项目打包
 npm run build
 ```
 ## 项目结构树
