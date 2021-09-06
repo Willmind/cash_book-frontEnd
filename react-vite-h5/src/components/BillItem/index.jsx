@@ -11,6 +11,7 @@ import s from './style.module.less';
 const BillItem = ({bill}) => {
     const [income, setIncome] = useState(0); // 收入
     const [expense, setExpense] = useState(0); // 支出
+    const history = useHistory()
 
 
     useEffect(() => {
@@ -34,6 +35,7 @@ const BillItem = ({bill}) => {
 
     const goToDetail=(item)=>{
         history.push(`/detail?id=${item.id}`)
+
     }
 
     return (
@@ -73,7 +75,7 @@ const BillItem = ({bill}) => {
                           help={
                               <div>
                                   {dayjs(Number(item.date)).format('HH:mm')}
-                                  {item.remark?`|${item.remark}`:''}
+                                  {item.remark?` | ${item.remark}`:''}
                               </div>
                           }
                     >

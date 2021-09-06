@@ -46,8 +46,7 @@ const Login = () => {
 
                     localStorage.setItem('token', '');
                     localStorage.setItem('token', res.data.token);
-
-                    console.log(localStorage.getItem('token'));
+                    window.location.href = '/'
                 })
             }else{
                 /**
