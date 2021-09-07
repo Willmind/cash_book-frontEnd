@@ -10,7 +10,7 @@
 cd react-vite-h5
 
 # 安装依赖
-npm install
+cnpm install
 
 # 项目运行
 npm run dev
