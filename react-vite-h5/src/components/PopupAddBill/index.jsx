@@ -242,7 +242,7 @@ const PopupAddBill = forwardRef(({ detail = {}, onReload }, ref) => {
 
                 <div className={s.type}>
                     <span onClick={() => changeType('expense')} className={cx({ [s.expense]: true, [s.active]: payType === 'expense' })}>支出</span>
-                    <span onClick={() => changeType('income')} className={cx({ [s.expense]: true, [s.active]: payType === 'income' })}>收入</span>
+                    <span onClick={() => changeType('income')} className={cx({ [s.income]: true, [s.active]: payType === 'income' })}>收入</span>
                 </div>
                 <div
                     className={s.time}

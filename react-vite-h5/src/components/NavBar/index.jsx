@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 import s from './style.module.less';
 import CustomIcon from '../CustomIcon'
 
-const NavBar = ({showNav}) => {
+const NavBar = ({showNav,pathname}) => {
     const [activeKey, setActiveKey] = useState('/');
 
     /**
@@ -24,7 +24,7 @@ const NavBar = ({showNav}) => {
      * 声明 NavBar 函数组件，它接收一个外部传入的 showNav 属性，用于控制导航栏的显示隐藏
      */
     return (
-        <TabBar visible={showNav} activeKey={activeKey} onChange={changeTab}>
+        <TabBar visible={showNav} activeKey={pathname} onChange={changeTab}>
             <TabBar.Item
                 itemKey="/"
                 title="账单"

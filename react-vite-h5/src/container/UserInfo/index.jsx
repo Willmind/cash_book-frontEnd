@@ -19,6 +19,7 @@ const UserInfo = ()=>{
     const getUserInfo = async () => {
         const { data } = await get('/api/user/get_userinfo');
         setUser(data);
+        console.log(data);
         setAvatar(data.avatar)
         setSignature(data.signature)
     };
@@ -57,8 +58,9 @@ const UserInfo = ()=>{
                 'Authorization': token
             }
         }).then(res => {
+            console.log(res);
             // 返回图片地址
-            setAvatar(imgUrlTrans(res.data))
+            setAvatar(imgUrlTrans('/api'+res.data))
         })
     }
     return <>

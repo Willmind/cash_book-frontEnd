@@ -1,10 +1,9 @@
-.home{
+.home {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 90px;
-
-  .header{
+  padding-top: 80px;
+  .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,47 +11,47 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
+    height: 80px;
     background-color: #007fff;
     color: #fff;
     font-size: 14px;
     z-index: 100;
-    padding: 14px;
-
-    .dataWrap{
-      display: flex;
-      >div{
-        margin-right: 20px;
-        >b{
-          margin-left: 10px;
+    padding: 20px 10px;
+    .data-wrap {
+      font-size: 14px;
+      > span {
+        font-size: 12px;
+        > b {
           font-size: 26px;
           font-family: DINCondensed-Bold, DINCondensed;
-        }
-      }
-    }
-    .typeWrap{
-      display: flex;
-      justify-content: flex-end;
-      >div{
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 30px;
-        padding: 6px 12px;
-        font-size: 12px;
-        margin-left: 10px;
-        display: flex;
-        align-items: center;
-
-        .arrow{
-          font-size: 12px;
           margin-left: 4px;
         }
       }
-
+      .income {
+        margin-left: 10px;
+      }
     }
-
+    .type-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      > div {
+        align-self: flex-start;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        padding: 3px 8px;
+        font-size: 12px;
+      }
+      .left {
+        margin-right: 6px;
+      }
+      .arrow {
+        font-size: 12px;
+        margin-left: 4px;
+      }
+    }
   }
-
-  .main{
+  .content-wrap {
     height: calc(~"(100% - 50px)");
     overflow: hidden;
     overflow-y: scroll;
@@ -63,12 +62,10 @@
         overflow: unset;
       }
     }
-
   }
   .add {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
+
+
     z-index: 1000;
     width: 50px;
     height: 50px;
@@ -80,5 +77,8 @@
     align-items: center;
     border: 1PX solid #e9e9e9;
     color: #007fff;
+    &:active{
+      background-color: #f9f9f9;
+    }
   }
 }

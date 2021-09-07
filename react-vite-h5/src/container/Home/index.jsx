@@ -1,6 +1,6 @@
 // Home/index.jsx
 import React, {useState, useEffect, useRef} from 'react'
-import {Icon, Pull} from 'zarm'
+import {Icon, Pull,Drag,Button} from 'zarm'
 import BillItem from "../../components/BillItem";
 import dayjs from 'dayjs'
 import s from './style.module.less'
@@ -9,9 +9,72 @@ import PopupType from '../../components/PopupType'
 import PopupDate from '@/components/PopupDate'
 import CustomIcon from '@/components/CustomIcon'
 import PopupAddBill from "../../components/PopupAddBill";
+import Empty from '@/components/Empty'
 
-
+let currentPoint = [300, 400];
 const Home = () => {
+
+    const containerRef = useRef();
+    const boxRef = useRef();
+    const [point, setPoint] = useState([300, 400]);
+    const [drag, setDrag] = useState(false);
+
+    useEffect(() => {
+        const { width, height } = boxRef.current.getBoundingClientRect();
+        const {
+            width: containerWidth,
+            height: containerHeight,
+        } = containerRef.current.getBoundingClientRect();
+
+        currentPoint[0] = 300;
+        currentPoint[1] = 400;
+        setPoint(currentPoint);
+
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
+    const onDragStart = (event, dragState) => {
+        setDrag(true);
+    };
+
+    const onDragMove = (event, dragState) => {
+        const { width, height } = boxRef.current.getBoundingClientRect();
+        const {
+            width: containerWidth,
+            height: containerHeight,
+        } = containerRef.current.getBoundingClientRect();
+
+        let newX = currentPoint[0] + dragState.offsetX;
+        let newY = currentPoint[1] + dragState.offsetY;
+
+        if (newX < 0) {
+            newX = 0;
+        }
+        if (newX > containerWidth - width) {
+            newX = containerWidth - width;
+        }
+        if (newY < 0) {
+            newY = 0;
+        }
+        if (newY > containerHeight - height) {
+            newY = containerHeight - height;
+        }
+
+        setPoint([newX, newY]);
+        return true;
+    };
+
+    const onDragEnd = (event, dragState) => {
+        currentPoint = point;
+        setDrag(false);
+    };
+
+
+
     const addToggle = () => {
         addRef.current && addRef.current.show()
         // do something
@@ -102,28 +165,22 @@ const Home = () => {
     }
 
 
-    return <div className={s.home}>
+    return <div className={s.home} style={{position: 'relative'}} ref={containerRef}>
         <div className={s.header}>
             <div className={s.dataWrap}>
-                <div>
-                    总支出:<b>¥ {totalExpense}</b>
-                </div>
-                <div>
-                    总收入:<b>¥ {totalIncome}</b>
-                </div>
+                <span className={s.expense}>总支出：<b>¥ { totalExpense }</b></span>
+                <span className={s.income}>总收入：<b>¥ { totalIncome }</b></span>
             </div>
             <div className={s.typeWrap}>
-                <div onClick={toggle}>
-                    {currentSelect.name || '全部类型'}<Icon className={s.arrow} type="arrow-bottom"/>
+                <div className={s.left} onClick={toggle}>
+                    <span className={s.title}>{ currentSelect.name || '全部类型' } <Icon className={s.arrow} type="arrow-bottom" /></span>
                 </div>
-                <div onClick={monthToggle}>
-                    {currentTime} <Icon className={s.arrow} type="arrow-bottom"/>
+                <div className={s.right}>
+                    <span className={s.time} onClick={monthToggle}>{ currentTime }<Icon className={s.arrow} type="arrow-bottom" /></span>
                 </div>
-
             </div>
-
         </div>
-        <div className={s.main}>
+        <div className={s.contentWrap}>
             {
                 list.length ? <Pull
                     animationDuration={200}
@@ -144,13 +201,25 @@ const Home = () => {
                             key={index}
                         />)
                     }
-                </Pull> : null
+                </Pull> : <Empty />
             }
         </div>
-        <div className={s.add}  onClick={addToggle}><CustomIcon type='tianjia' /></div>
-        <PopupType ref={typeRef} onSelect={select}/>
-        <PopupDate ref={monthRef} mode="month" onSelect={selectMonth}/>
-        <PopupAddBill  ref={addRef} onReload={refreshData}  />
+
+        <Drag  onDragStart={onDragStart} onDragMove={onDragMove} onDragEnd={onDragEnd}>
+            <div
+                ref={boxRef}
+                style={{
+                    display: 'inline-block',
+                    position:'fixed',
+                    transform: `translate3d(${point[0]}px, ${point[1]}px, 0)`,
+                }}
+            >
+                <div className={s.add} onClick={addToggle}><CustomIcon type='tianjia'/></div>
+            </div>
+        </Drag>
+        <PopupType ref={typeRef} onSelect={select} />
+        <PopupDate ref={monthRef} mode="month" onSelect={selectMonth} />
+        <PopupAddBill ref={addRef} onReload={refreshData} />
     </div>
 }
 

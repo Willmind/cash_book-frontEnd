@@ -61,7 +61,7 @@ const  Data = () => {
             proportionChart.setOption({
                 tooltip: {
                     trigger: 'item',
-                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    formatter: '{a} <br/>{b} : ¥{c} ({d}%)'
                 },
                 // 图例
                 legend: {
@@ -115,7 +115,7 @@ const  Data = () => {
                 <span className={s.title}>收支构成</span>
                 <div className={s.tab}>
                     <span onClick={() => changeTotalType('expense')} className={cx({ [s.expense]: true, [s.active]: totalType == 'expense' })}>支出</span>
-                    <span onClick={() => changeTotalType('income')} className={cx({ [s.expense]: true, [s.active]: totalType == 'income' })}>收入</span>
+                    <span onClick={() => changeTotalType('income')} className={cx({ [s.income]: true, [s.active]: totalType == 'income' })}>收入</span>
                 </div>
             </div>
             <div className={s.content}>

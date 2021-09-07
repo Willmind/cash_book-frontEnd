@@ -20,7 +20,9 @@ function App() {
     const needNav = ['/', '/data', '/user'] // 需要底部导航栏的路径
     const [showNav, setShowNav] = useState(false) // 是否展示 Nav
 
+
     useEffect(()=>{
+
         setShowNav(needNav.includes(pathname))
 
     },[pathname])// [] 内的参数若是变化，便会执行上述回调函数=
@@ -39,7 +41,7 @@ function App() {
                 </Switch>
 
             </ConfigProvider>
-            <NavBar showNav={showNav}></NavBar>
+            <NavBar showNav={showNav} pathname={pathname}></NavBar>
         </>
     )
 }
