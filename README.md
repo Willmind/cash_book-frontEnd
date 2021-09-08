@@ -23,32 +23,31 @@ npm run dev
 npm run build
 ```
 ## 项目结构树
-```
-.
+```bash
 └── react-vite-h5
     ├── dist
     │   └── assets
     └── src
-        ├── components  组件
-        │   ├── BillItem	账单列
-        │   ├── CustomIcon	图标
-        │   ├── Empty	空状态
-        │   ├── Header	头部烂
-        │   ├── NavBar	底部栏
-        │   ├── PopupAddBill	添加账单弹框
-        │   ├── PopupDate	时间选择弹框
-        │   └── PopupType	类型选择弹框
+        ├── components  # 组件
+        │   ├── BillItem  # 账单列
+        │   ├── CustomIcon	# 图标
+        │   ├── Empty	# 空状态
+        │   ├── Header	# 头部烂
+        │   ├── NavBar	# 底部栏
+        │   ├── PopupAddBill	# 添加账单弹框
+        │   ├── PopupDate	# 时间选择弹框
+        │   └── PopupType	# 类型选择弹框
         ├── config
         ├── container
-        │   ├── Account	个人中心
-        │   ├── Data	数据
-        │   ├── Detail	数据详情
-        │   ├── Home	首页
-        │   ├── Login	登录
-        │   ├── User	用户
-        │   └── UserInfo	用户信息
-        ├── router	路由
-        └── utils	常用状态和工具
+        │   ├── Account  # 个人中心
+        │   ├── Data	# 数据
+        │   ├── Detail	# 数据详情
+        │   ├── Home	# 首页
+        │   ├── Login	# 登录
+        │   ├── User	# 用户
+        │   └── UserInfo	# 用户信息
+        ├── router	# 路由
+        └── utils	 # 常用状态和工具
 ```
 ## 项目知识点
 - 单页面应用实践
