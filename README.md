@@ -24,6 +24,7 @@ npm run build
 ```
 ## 项目预览
 ![image](https://raw.githubusercontent.com/Willmind/cash_book-frontEnd/master/images/WechatIMG92.jpeg)
+![image](https://raw.githubusercontent.com/Willmind/cash_book-frontEnd/master/images/WechatIMG96.jpeg)
 ![image](https://raw.githubusercontent.com/Willmind/cash_book-frontEnd/master/images/WechatIMG93.jpeg)
 ![image](https://raw.githubusercontent.com/Willmind/cash_book-frontEnd/master/images/WechatIMG94.jpeg)
 ![image](https://raw.githubusercontent.com/Willmind/cash_book-frontEnd/master/images/WechatIMG95.jpeg)
