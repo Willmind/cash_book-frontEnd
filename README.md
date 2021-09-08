@@ -49,10 +49,10 @@ npm run build
 ```
 ## 项目知识点
 - 前端构建工具 [Vite](https://cn.vitejs.dev/)
-- 前端框架 React 和路由 react-router-dom
-- React Hooks钩子函数
-- CSS 预加载器 Less
-- HTTP 请求库 axios
+- 前端框架 [React](https://react.docschina.org/) 和路由 [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [React Hooks](https://react.docschina.org/docs/hooks-intro.html)钩子函数
+- CSS 预加载器 [Less](https://less.bootcss.com/)
+- HTTP 请求库 [axios](http://www.axios-js.com/)
 - 组件设计封装
 - 跨域代理
-- 移动端适配
+- 移动端适配 lib-flexible
