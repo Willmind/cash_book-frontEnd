@@ -1,5 +1,3 @@
-import Index from "@/container/Index";
-import About from "../container/About";
 
 import Data from "../container/Data";
 import Home from "../container/Home";
