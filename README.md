@@ -1,6 +1,6 @@
 # Egg + React 全栈开发记账本---前端页面代码
 
-前端页面采用使用Vite 2.0 + React + ZarmUI 搭建 H5 开发环境
+前端页面使用Vite 2.0 + React + ZarmUI 搭建 H5 开发环境
 
 
 ## 项目启动
@@ -48,7 +48,7 @@ npm run build
         └── utils	常用状态和工具
 ```
 ## 项目知识点
-- 前端构建工具 Vite
+- 前端构建工具 [Vite](https://cn.vitejs.dev/)
 - 前端框架 React 和路由 react-router-dom
 - React Hooks钩子函数
 - CSS 预加载器 Less
