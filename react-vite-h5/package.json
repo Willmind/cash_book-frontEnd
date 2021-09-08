@@ -2,7 +2,7 @@
   "name": "react-vite-h5",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host 19.129.156.124",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
