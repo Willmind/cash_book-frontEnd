@@ -56,3 +56,17 @@ npm run build
 - 组件设计封装
 - 跨域代理
 - 移动端适配 lib-flexible
+
+## React Hooks
+React 早期的写法以 Class 类组件为主，附带一些纯用于展示的函数组件，但是函数组件是不能控制自身的状态的. 
+引入全新的 Hooks 写法，如 useEffect、useState、useRef、useCallback、useMemo、useReducer 等等，通过这些钩子函数来管理函数组件的各自状态
+
+## vite 构建工具
+下一代前端开发与构建工具
+- 快速启动，Vite 会在本地启动一个开发服务器，来管理开发环境的资源请求
+- 相比 Webpack 的开发环境打包构建，它在开发环境下是无需打包的，热更新相比 Webpack 会快很多
+- 原生 ES Module，要什么就当场给你什么。而 Webpack 则是先将资源构建好之后，再根据你的需要，分配给你想要的资源
+
+## CSS 预处理器 Less
+项目中采用的 Less 作为 CSS 预处理器，它能设置变量以及一些嵌套逻辑，便于项目的样式编写。
+
