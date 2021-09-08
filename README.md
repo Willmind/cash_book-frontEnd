@@ -17,7 +17,7 @@ cnpm install
 
 # 项目运行
 npm run dev
-使用浏览器打开http://localhost:3000/
+使用浏览器打开http://localhost:3000/,默认账号密码是nick/1
 
 # 前端项目打包
 npm run build
